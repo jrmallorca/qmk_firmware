@@ -25,3 +25,6 @@
 // For home row mods
 #define IGNORE_MOD_TAP_INTERRUPT
 #define PERMISSIVE_HOLD
+
+// TT triggers when tapped 3 times.
+#define TAPPING_TOGGLE 3
