@@ -28,3 +28,5 @@
 
 // TT triggers when tapped 3 times.
 #define TAPPING_TOGGLE 3
+
+#define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
