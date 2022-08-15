@@ -9,7 +9,7 @@
 #define LA_MNAV MO(MOUSE_NAV)
 #define LA_NUM  MO(NUM)
 #define LA_GAME DF(GAME)
-#define LA_KEEB  MO(KEYBOARD)
+#define LA_KEEB MO(KEYBOARD)
 
 // Define keys
 #define O_LSFT OSM(MOD_LSFT)
@@ -70,9 +70,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
  * │      │   Z  │   X  │   C  │   D  │   V  │Sleep │  │L_GAME│   K  │   H  │   ,  │   .  │   /  │      │
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
- * │      │      │      │OSHIFT│L_NAV │      │      │  │      │      │L_SYM │CPSWRD│      │      │      │
+ * │      │      │      │      │L_NAV │      │      │  │      │      │L_SYM │      │      │      │      │
  * └──────┴──────┴──────┴──────┴──────┤Space ├──────┤  ├──────┤Enter ├──────┴──────┴──────┴──────┴──────┘
- *                                    │      │      │  │      │      │
+ *                                    │      │OSHIFT│  │CAPWRD│      │
  *                                    └──────┴──────┘  └──────┴──────┘
  * ┌──────┬──────┬──────┬──────┬──────┬──────┐                ┌──────┬──────┬──────┬──────┬──────┬──────┐
  * │      │      │      │      │      │      │                │      │      │      │      │      │      │
@@ -87,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB , KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   , KC_PWR ,                   LA_KEEB, KC_J   , KC_L   , KC_U   , KC_Y   , KC_QUOT, KC_DEL ,
         KC_ESC , KC_A   , KC_R   , KC_S   , KC_T   , KC_G   , KC_WAKE,                   LA_DEF , KC_M   , KC_N   , KC_E   , KC_I   , KC_O   , KC_BSPC,
         _______, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , KC_SLEP,                   LA_GAME, KC_K   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, _______,
-        _______, _______, _______, O_LSFT , LA_NAV , KC_SPC , _______, _______, _______, _______, KC_ENT , LA_SYM , CAPSWRD, _______, _______, _______,
+        _______, _______, _______, _______, LA_NAV , KC_SPC , _______, O_LSFT , CAPSWRD, _______, KC_ENT , LA_SYM , _______, _______, _______, _______,
 
         _______, _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______,                                                       _______, _______, _______, _______, _______
