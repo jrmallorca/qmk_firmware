@@ -19,6 +19,7 @@
 #define S_LABK S(KC_COMM)
 #define S_RABK S(KC_DOT)
 
+#define K_QSTN S(KC_SLSH)
 #define K_PIPE S(KC_NUBS)
 #define K_USCR S(KC_MINS)
 #define K_AT   S(KC_QUOT)
@@ -68,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
  * │Escape│   A  │   R  │   S  │   T  │   G  │ Wake │  │L_DEF │   M  │   N  │   E  │   I  │   O  │ BSPC │
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
- * │      │   Z  │   X  │   C  │   D  │   V  │Sleep │  │L_GAME│   K  │   H  │   ,  │   .  │   /  │      │
+ * │      │   Z  │   X  │   C  │   D  │   V  │Sleep │  │L_GAME│   K  │   H  │   ,  │   .  │   ?  │      │
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
  * │      │      │      │      │L_NAV │      │      │  │      │      │L_SYM │      │      │      │      │
  * └──────┴──────┴──────┴──────┴──────┤Space ├──────┤  ├──────┤Enter ├──────┴──────┴──────┴──────┴──────┘
@@ -86,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, QK_BOOT,                   QK_BOOT, _______, _______, _______, _______, _______, _______,
         KC_TAB , KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   , KC_PWR ,                   LA_KEEB, KC_J   , KC_L   , KC_U   , KC_Y   , KC_QUOT, KC_DEL ,
         KC_ESC , KC_A   , KC_R   , KC_S   , KC_T   , KC_G   , KC_WAKE,                   LA_DEF , KC_M   , KC_N   , KC_E   , KC_I   , KC_O   , KC_BSPC,
-        _______, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , KC_SLEP,                   LA_GAME, KC_K   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, _______,
+        _______, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , KC_SLEP,                   LA_GAME, KC_K   , KC_H   , KC_COMM, KC_DOT , K_QSTN , _______,
         _______, _______, _______, _______, LA_NAV , KC_SPC , _______, O_LSFT , CAPSWRD, _______, KC_ENT , LA_SYM , _______, _______, _______, _______,
 
         _______, _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, _______, _______,
