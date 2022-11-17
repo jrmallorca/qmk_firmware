@@ -21,6 +21,9 @@ COMMAND_ENABLE = no         # Commands for debug and configuration
 NKRO_ENABLE = yes           # Enable N-Key Rollover
 AUDIO_ENABLE = yes          # Audio output
 AUDIO_DRIVER = dac_additive
+STENO_ENABLE = yes 			# Enable stenography
+KEYBOARD_SHARED_EP = yes    # Combine base keyboard functionality into an endpoint
+							# (Free up an endpoint for mouse and steno)
 
 DYNAMIC_MACRO_ENABLE = yes
 DIP_SWITCH_ENABLE = yes
