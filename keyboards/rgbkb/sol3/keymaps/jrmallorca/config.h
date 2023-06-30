@@ -23,7 +23,6 @@
 #define STM32_ONBOARD_EEPROM_SIZE 2048
 
 // For home row mods
-#define IGNORE_MOD_TAP_INTERRUPT
 #define PERMISSIVE_HOLD
 
 // TT triggers when tapped 3 times.
