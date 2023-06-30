@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 
-#include "keymap_steno.h"
+// #include "keymap_steno.h"
 #include "oneshot.h"
 
 // Define layers
@@ -12,7 +12,7 @@
 #define LA_GAME DF(GAME)
 #define LA_GKR  DF(GAME_KK_RPG)
 #define LA_GNUM MO(GAME_NUM)
-#define LA_STNO DF(STENO)
+// #define LA_STNO DF(STENO)
 
 // Define keys
 #define O_LSFT OSM(MOD_LSFT)
@@ -46,7 +46,7 @@ enum sol_layers {
     GAME,
     GAME_KK_RPG,
     GAME_NUM,
-    STENO,
+//    STENO,
 };
 
 enum sol_keycodes {
@@ -70,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┐  ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┐
  * │RGB_TG│ HUE- │ SAT- │EFFCT-│MODE- │BRIGT-│Reset │  │Reset │BRIGT+│MODE+ │EFFCT+│ SAT+ │ HUE+ │RGB_RT│
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
- * │      │      │   W  │   F  │   P  │   B  │Power │  │L_GKR │   J  │   L  │   U  │   Y  │      │      │
+ * │      │      │   W  │   F  │   P  │   B  │Power │  │L_GAME│   J  │   L  │   U  │   Y  │      │      │
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
  * │ Tab  │   Q  │   R  │   S  │   T  │   G  │ Wake │  │L_DEF │   M  │   N  │   E  │   I  │   '  │Delete│
  * ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤  ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
@@ -90,9 +90,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [DEFAULT] = LAYOUT(
         RGB_TOG, RGB_HUD, RGB_SAD, RGB_SPD, RGB_RMOD,RGB_VAD, QK_BOOT,                   QK_BOOT, RGB_VAI, RGB_MOD, RGB_SPI, RGB_SAI, RGB_HUI, RGB_RST,
-        _______, _______, KC_W   , KC_F   , KC_P   , KC_B   , KC_PWR ,                   LA_GKR , KC_J   , KC_L   , KC_U   , KC_Y   , _______, _______,
+        _______, _______, KC_W   , KC_F   , KC_P   , KC_B   , KC_PWR ,                   LA_GAME, KC_J   , KC_L   , KC_U   , KC_Y   , _______, _______,
         KC_TAB , KC_Q   , KC_R   , KC_S   , KC_T   , KC_G   , KC_WAKE,                   LA_DEF , KC_M   , KC_N   , KC_E   , KC_I   , KC_QUOT, KC_DEL ,
-        KC_ESC , KC_A   , KC_X   , KC_C   , KC_D   , KC_V   , KC_SLEP,                   LA_STNO, KC_K   , KC_H   , KC_COMM, KC_DOT , KC_O   , KC_BSPC,
+        KC_ESC , KC_A   , KC_X   , KC_C   , KC_D   , KC_V   , KC_SLEP,                   LA_GKR , KC_K   , KC_H   , KC_COMM, KC_DOT , KC_O   , KC_BSPC,
         _______, KC_Z   , _______, _______, _______, KC_SPC , LA_NAV , O_LSFT , CAPSWRD, LA_SYM , KC_ENT , _______, LA_GAME, _______, K_QSTN , _______,
 
         _______, _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, _______, _______,
@@ -352,16 +352,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * └──────┴──────┴──────┴──────┴──────┘                              └──────┴──────┴──────┴──────┴──────┘
  */
 
-    [STENO] = LAYOUT(
-        _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
-        _______, _______, STN_N2 , STN_N3 , STN_N4 , STN_N5 , _______,                   _______, STN_N6 , STN_N7 , STN_N8 , STN_N9 , _______, _______,
-        _______, STN_N1 , STN_TL , STN_PL , STN_HL , STN_ST1, _______,                   _______, STN_ST3, STN_FR , STN_PR , STN_LR , STN_NA , STN_NB ,
-        _______, STN_S1 , STN_KL , STN_WL , STN_RL , STN_ST2, _______,                   _______, STN_ST4, STN_RR , STN_BR , STN_GR , STN_TR , STN_DR ,
-        _______, STN_S2 , _______, _______, _______, STN_A  , _______, STN_O  , STN_E  , _______, STN_U  , _______, _______, _______, STN_SR , STN_ZR ,
-
-        _______, _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______,                                                       _______, _______, _______, _______, _______
-    ),
+/*  [STENO] = LAYOUT(
+ *      _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______,
+ *      _______, _______, STN_N2 , STN_N3 , STN_N4 , STN_N5 , _______,                   _______, STN_N6 , STN_N7 , STN_N8 , STN_N9 , _______, _______,
+ *      _______, STN_N1 , STN_TL , STN_PL , STN_HL , STN_ST1, _______,                   _______, STN_ST3, STN_FR , STN_PR , STN_LR , STN_NA , STN_NB ,
+ *      _______, STN_S1 , STN_KL , STN_WL , STN_RL , STN_ST2, _______,                   _______, STN_ST4, STN_RR , STN_BR , STN_GR , STN_TR , STN_DR ,
+ *      _______, STN_S2 , _______, _______, _______, STN_A  , _______, STN_O  , STN_E  , _______, STN_U  , _______, _______, _______, STN_SR , STN_ZR ,
+ *
+ *      _______, _______, _______, _______, _______, _______,                                     _______, _______, _______, _______, _______, _______,
+ *      _______, _______, _______, _______, _______,                                                       _______, _______, _______, _______, _______
+ *  ),
+ */
 };
 
 bool is_oneshot_cancel_key(uint16_t keycode) {
@@ -475,15 +476,15 @@ void render_layer_status(void) {
         case GAME_NUM:
             oled_write_ln_P(PSTR("Game Numbers"), false);
             break;
-        case STENO:
-            oled_write_ln_P(PSTR("Stenography"), false);
-            break;
+        /* case STENO: */
+            /* oled_write_ln_P(PSTR("Stenography"), false); */
+            /* break; */
         default:
             oled_write_ln_P(PSTR("Undef"), false);
     }
 }
 
 // Runs just one time when the keyboard initializes.
-void matrix_init_user(void) {
-    steno_set_mode(STENO_MODE_GEMINI);
-};
+/* void matrix_init_user(void) { */
+    /* steno_set_mode(STENO_MODE_GEMINI); */
+/* }; */
